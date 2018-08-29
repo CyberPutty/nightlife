@@ -1,0 +1,1 @@
+[] learn about hydrate send index with root class to the main page and preload state.

@@ -1,9 +1,10 @@
-body {
-  background-color: #092949;
-  color: #6a929e;
+body{
+    overflow: hidden;
+     background-color: #092949; 
+    color: #6a929e;
+ 
 }
 .grid-main {
-  margin: 10px;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 100px 1fr 100px;
@@ -19,14 +20,11 @@ body {
   z-index: 99;
   align-self: stretch;
 }
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2px;
-  height: 200px;
+img{
+height:200px ;
 }
 .grid-nav {
+
   height: 100px;
   display: grid;
   grid-column: span 1;
@@ -37,8 +35,8 @@ img {
 .grid-mid {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
   grid-area: c;
 }
 
@@ -50,7 +48,7 @@ img {
 .nav-item {
   display: block;
 }
-.login {
-  grid-column: 4;
-  justify-self: flex-end;
+.login{
+    grid-column: 4;
+    justify-self: flex-end;
 }

@@ -1,21 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
+import AllVenuesContainer from "./components/container/allVenuesContainer";
+import VenueContainer from "./components/container/venueContainer";
+import { Router, Route, Switch} from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import {connect} from "react-redux";
+import Venue from './components/presentational/venue';
+// app container contains the main component--->venueContainer-->
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
 
-export default App;
+const App = ({venues,selected}) => {
+ 
+  // new method venue should return results based on url search and not rely on index... should search to see if it is in the current state else grab from yelp.
+
+  return (
+    <BrowserRouter>
+    <Switch>
+    <Route exact path="/" component={AllVenuesContainer}/>
+    <Route path="/:alias?" render={(props)=><VenueContainer urlsearch={props.match.params.alias}/>}/> 
+    </Switch>
+    </BrowserRouter>
+  );
+};
+
+
+const mapStateToProps = (state, ownProps) => ({
+  selected: state.focusVenue.index,
+  venues: state.search.venues,
+ 
+});
+
+const mapDispatchToProps = dispatch => ({
+
+});
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

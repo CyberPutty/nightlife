@@ -1,9 +1,12 @@
+// 'use strict';
 var express = require('express');
 var router = express.Router();
+const yelp = require('yelp-fusion');
+const client= yelp.client(process.env.API_KEY_YELP);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+router.post('/search', function(req, res, next) {
+
 });
 
 module.exports = router;

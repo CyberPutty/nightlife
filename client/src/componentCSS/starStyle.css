@@ -1,0 +1,21 @@
+ul {
+    padding: 20px;
+    display: inline;
+}
+.half-star:last-child{
+position: relative;
+}
+.half-star:after{
+position: absolute;
+content: '';
+background: #092949;
+left: 50%;
+bottom: 0;
+top: 0;
+right: 0;
+}
+
+.full-star{
+display: inline;    
+color: gold;
+}
