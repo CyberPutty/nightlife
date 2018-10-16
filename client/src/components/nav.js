@@ -6,9 +6,6 @@ class nav extends React.Component {
     return (
       <div className="grid-nav">
         <h1 className="nav-item">Nightlife</h1>
-        <div>
-          <button onClick={()=>this.props.fetchVenues('search','pasta')}>click</button>
-        </div>
         <h1 className="nav-item login">login</h1>
       </div>
     );

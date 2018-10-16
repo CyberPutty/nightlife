@@ -11,7 +11,7 @@ import Reducers from "./redux/reducers/index";
 import thunkMiddleware from "redux-thunk";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
-
+import Search from "./components/search";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 delete window.__PRELOADED_STATE__
@@ -25,6 +25,7 @@ ReactDOM.render(
   <Provider store={store}>
     <div className="grid-main">
       <Nav />
+      <Search/>
       <App/>
       <Footer />
     </div>

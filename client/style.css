@@ -7,13 +7,18 @@ body{
 .grid-main {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 100px 50px 1fr 100px;
   grid-template-areas:
     "h h h "
+    "s s s "
     "c c c "
     "f f f ";
 }
+.search{
 
+  grid-column: span 1;
+  grid-area: s;
+}
 .grid-venue {
   display: block;
   height: 400px;
